@@ -41,15 +41,14 @@ void inserer(TableHachage& th, const std::string& cle, int valeur) {
     while (th.table[index].occupe && th.table[index].cle != cle) {
         index = (index + 1) % TAILLE_TABLE;
         if (index == original_index) {
-            std::cout << "Table de hachage pleine, impossible d'insérer " << cle << std::endl;
-            return;
+            return false; // Table pleine, insertion échouée
         }
     }
 
     th.table[index].cle = cle;
     th.table[index].valeur = valeur;
     th.table[index].occupe = true;
-    std::cout << "Inséré : (" << cle << ", " << valeur << ") à l'index " << index << std::endl;
+    return true; // Insertion réussie
 }
 
 // Recherche une valeur par sa clé dans la table de hachage
