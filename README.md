@@ -212,10 +212,6 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 
 Si ce projet vous a été utile, n'hésitez pas à lui donner une étoile ⭐ !
 
-### 🎓 Ressources utiles
-- [Cours d'algorithmique](https://example.com)
-- [Documentation C++](https://cppreference.com)
-- [Visualisation d'algorithmes](https://visualgo.net)
 
 ---
 
