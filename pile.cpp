@@ -1,42 +1,53 @@
-
 #include <iostream>
 using namespace std;
 
 const int MAX = 100;
 
-class Pile {
+// Structure pour représenter une Pile
+struct Pile {
     int tab[MAX];
     int sommet;
-
-public:
-    Pile() { sommet = -1; }
-
-    void push(int val) {
-        if (sommet >= MAX - 1) cout << "Pile pleine" << endl;
-        else tab[++sommet] = val;
-    }
-
-    void pop() {
-        if (sommet < 0) cout << "Pile vide" << endl;
-        else sommet--;
-    }
-
-    void afficher() {
-        if (sommet < 0) cout << "Pile vide" << endl;
-        else {
-            for (int i = sommet; i >= 0; i--) cout << tab[i] << " ";
-            cout << endl;
-        }
-    }
 };
 
+// Fonction pour initialiser une Pile
+void initialiserPile(Pile& p) {
+    p.sommet = -1;
+}
+
+// Fonction pour empiler un élément
+void push(Pile& p, int val) {
+    if (p.sommet >= MAX - 1) cout << "Pile pleine" << endl;
+    else p.tab[++p.sommet] = val;
+}
+
+// Fonction pour dépiler un élément
+void pop(Pile& p) {
+    if (p.sommet < 0) cout << "Pile vide" << endl;
+    else p.sommet--;
+}
+
+// Fonction pour afficher les éléments de la Pile
+void afficherPile(Pile& p) {
+    if (p.sommet < 0) cout << "Pile vide" << endl;
+    else {
+        for (int i = p.sommet; i >= 0; i--) cout << p.tab[i] << " ";
+        cout << endl;
+    }
+}
+
 int main() {
-    Pile p;
-    p.push(10);
-    p.push(20);
-    p.push(30);
-    p.afficher();
-    p.pop();
-    p.afficher();
+    Pile p; // Déclaration d'une variable de type Pile
+    initialiserPile(p);
+
+    push(p, 10);
+    push(p, 20);
+    push(p, 30);
+    cout << "Pile après ajouts : ";
+    afficherPile(p);
+
+    pop(p);
+    cout << "Pile après suppression : ";
+    afficherPile(p);
+
     return 0;
 }
