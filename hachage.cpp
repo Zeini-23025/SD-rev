@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 
-const int TAILLE_TABLE = 10; // Taille fixe de la table de hachage
+constexpr size_t TAILLE_TABLE = 10; // Taille fixe de la table de hachage
 
 // Structure pour représenter une entrée dans la table de hachage
 struct EntreeHachage {
