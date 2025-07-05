@@ -1,148 +1,224 @@
-
 # 🔧 Structures de Données et Algorithmes en C++
 
-Ce projet contient des exemples simples d'implémentation en C++ pour comprendre :
+[![Language](https://img.shields.io/badge/Language-C%2B%2B-blue.svg)](https://github.com/Zeini-23025)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)](https://github.com/Zeini-23025)
 
-- Les algorithmes de tri
-- Les pointeurs
-- Les structures de données de base :
-  - Pile (stack)
-  - File (queue)
-  - Liste chaînée (linked list)
-  - Arbre binaire (binary tree)
+Un projet éducatif complet pour apprendre les structures de données fondamentales et les algorithmes en C++. Ce repository contient des implémentations claires et commentées, idéales pour les étudiants et développeurs débutants.
 
----
+## 📋 Table des matières
 
-## 📌 1. Algorithmes de tri
+- [🎯 Objectifs](#-objectifs)
+- [📚 Contenu du projet](#-contenu-du-projet)
+- [🚀 Installation et utilisation](#-installation-et-utilisation)
+- [📖 Documentation](#-documentation)
+- [🔧 Structures implémentées](#-structures-implémentées)
+- [📊 Complexités](#-complexités)
+- [🤝 Contribution](#-contribution)
+- [📄 Licence](#-licence)
 
-### 🔷 Tri par sélection (Selection Sort)
+## 🎯 Objectifs
 
-- Trouve le plus petit élément et l'échange avec l'élément courant.
-- 📈 Complexité : `O(n²)`
+Ce projet vise à :
+- ✅ Comprendre les concepts fondamentaux des structures de données
+- ✅ Maîtriser les algorithmes de tri classiques
+- ✅ Apprendre la manipulation des pointeurs en C++
+- ✅ Pratiquer l'implémentation manuelle (sans STL)
+- ✅ Analyser les complexités temporelles et spatiales
 
-### 🔷 Tri par insertion (Insertion Sort)
+## 📚 Contenu du projet
 
-- Insère chaque élément dans la bonne position dans la partie déjà triée.
-- 📈 Complexité : `O(n²)` (meilleur cas : `O(n)`)
+### 🔷 Algorithmes de tri
+- **Tri par sélection** - Sélection du minimum/maximum
+- **Tri par insertion** - Insertion dans la partie triée
+- **Tri à bulles** - Comparaison d'éléments adjacents
 
-### 🔷 Tri à bulles (Bubble Sort)
+### 🔷 Structures de données
+- **Pile (Stack)** - Structure LIFO
+- **File (Queue)** - Structure FIFO
+- **Liste chaînée** - Structure dynamique linéaire
+- **Arbre binaire** - Structure arborescente
+- **Table de hachage** - Structure d'accès direct
 
-- Compare les éléments voisins et échange si nécessaire.
-- 📈 Complexité : `O(n²)` (meilleur cas : `O(n)` si déjà trié)
+## 🚀 Installation et utilisation
 
----
+### Prérequis
+- Compilateur C++ (GCC, Clang, ou MSVC)
+- Standard C++11 ou plus récent
 
-## 📌 2. Les pointeurs
+### Compilation
+```bash
+# Cloner le repository
+git clone https://github.com/Zeini-23025/structures-donnees-cpp.git
+cd structures-donnees-cpp
 
-Un **pointeur** est une variable qui contient l’**adresse mémoire** d’une autre variable.
+# Compiler un fichier spécifique
+g++ -std=c++11 -o tri tri.cpp
+./tri
 
-### Exemple :
-```cpp
-int x = 5;
-int* p = &x;
-cout << *p; // affiche 5
+# Compiler tous les fichiers
+make all
 ```
 
-| Symbole | Signification                |
-|---------|------------------------------|
-| `*`     | déréférencement (accès valeur) |
-| `&`     | adresse de la variable       |
+### Utilisation
+```bash
+# Exécuter les exemples
+./tri           # Algorithmes de tri
+./pile          # Démonstration de la pile
+./file          # Démonstration de la file
+./linkedlist    # Liste chaînée
+./arbre_binaire # Arbre binaire
+./hachage       # Table de hachage
+```
+
+## 📖 Documentation
+
+### Pointeurs en C++
+```cpp
+int x = 5;
+int* p = &x;    // p pointe vers x
+cout << *p;     // affiche 5 (déréférencement)
+```
+
+| Opérateur | Description |
+|-----------|-------------|
+| `*` | Déréférencement (accès à la valeur) |
+| `&` | Adresse de la variable |
+
+### Exemple d'utilisation - Pile
+```cpp
+#include "pile.h"
+
+int main() {
+    Pile p;
+    p.push(10);
+    p.push(20);
+    p.push(30);
+    
+    p.afficher();  // Affiche: 30 20 10
+    p.pop();       // Supprime 30
+    p.afficher();  // Affiche: 20 10
+    
+    return 0;
+}
+```
+
+## 🔧 Structures implémentées
+
+### 📁 Organisation des fichiers
+
+| Fichier | Description | Fonctionnalités |
+|---------|-------------|-----------------|
+| `tri.cpp` | Algorithmes de tri | Selection, Insertion, Bubble sort |
+| `pointeur.cpp` | Exemples de pointeurs | Syntaxe, manipulation mémoire |
+| `pile.cpp` | Implémentation de pile | Push, Pop, Afficher |
+| `file.cpp` | Implémentation de file | Ajouter, Supprimer, Afficher |
+| `linkedlist.cpp` | Liste chaînée | Ajouter, Supprimer, Rechercher |
+| `arbre_binaire.cpp` | Arbre binaire de recherche | Insertion, Suppression, Parcours |
+| `hachage.cpp` | Table de hachage | Insertion, Recherche, Suppression |
+
+### 🔄 Fonctionnalités principales
+
+#### Pile (Stack) - LIFO
+- `push(valeur)` : Ajouter un élément
+- `pop()` : Supprimer le dernier élément
+- `top()` : Consulter le sommet
+- `isEmpty()` : Vérifier si vide
+
+#### File (Queue) - FIFO
+- `enqueue(valeur)` : Ajouter à la fin
+- `dequeue()` : Supprimer au début
+- `front()` : Consulter le premier élément
+- `isEmpty()` : Vérifier si vide
+
+#### Liste Chaînée
+- `ajouter(valeur)` : Ajouter un nœud
+- `supprimer(valeur)` : Supprimer un nœud
+- `rechercher(valeur)` : Rechercher un élément
+- `afficher()` : Parcourir la liste
+
+#### Arbre Binaire de Recherche
+- `inserer(valeur)` : Ajouter selon la règle BST
+- `supprimer(valeur)` : Supprimer un nœud
+- `rechercher(valeur)` : Rechercher un élément
+- `parcours()` : In-order, Pre-order, Post-order
+
+#### Table de Hachage
+- `inserer(cle, valeur)` : Ajouter une paire
+- `rechercher(cle)` : Trouver une valeur
+- `supprimer(cle)` : Supprimer une paire
+- `afficher()` : Afficher le contenu
+
+## 📊 Complexités
+
+### Algorithmes de tri
+| Algorithme | Meilleur cas | Cas moyen | Pire cas | Espace |
+|------------|--------------|-----------|----------|---------|
+| Sélection | O(n²) | O(n²) | O(n²) | O(1) |
+| Insertion | O(n) | O(n²) | O(n²) | O(1) |
+| Bulles | O(n) | O(n²) | O(n²) | O(1) |
+
+### Structures de données
+| Structure | Insertion | Recherche | Suppression | Espace |
+|-----------|-----------|-----------|-------------|---------|
+| Pile | O(1) | O(n) | O(1) | O(n) |
+| File | O(1) | O(n) | O(1) | O(n) |
+| Liste chaînée | O(n) | O(n) | O(n) | O(n) |
+| Arbre binaire | O(log n) | O(log n) | O(log n) | O(n) |
+| Table de hachage | O(1)* | O(1)* | O(1)* | O(n) |
+
+*En moyenne, O(n) dans le pire cas
+
+## 🚧 Fonctionnalités à venir
+
+- [ ] Menu interactif en console
+- [ ] Interface graphique (SFML/SDL)
+- [ ] Algorithmes de tri avancés (QuickSort, MergeSort)
+- [ ] Structures avancées (AVL, Red-Black Tree)
+- [ ] Tests unitaires automatisés
+- [ ] Documentation Doxygen
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! Pour contribuer :
+
+1. 🍴 Fork le projet
+2. 🌟 Créer une branche (`git checkout -b feature/nouvelle-fonctionnalite`)
+3. 💾 Commit vos changements (`git commit -am 'Ajout d'une nouvelle fonctionnalité'`)
+4. 📤 Push vers la branche (`git push origin feature/nouvelle-fonctionnalite`)
+5. 🔄 Créer une Pull Request
+
+### Guidelines de contribution
+- Respecter le style de code existant
+- Ajouter des commentaires explicatifs
+- Tester les nouvelles fonctionnalités
+- Mettre à jour la documentation
+
+## 📞 Contact
+
+**Auteur** : [Zeini-23025](https://github.com/Zeini-23025)
+
+- 📧 Email : [zeiny.cheikh.dev@gmail.com](zeiny.cheikh.dev@gmail.com)
+- 🔗 GitHub : [@Zeini-23025](https://github.com/Zeini-23025)
+
+
+## 📄 Licence
+
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 ---
 
-## 📌 3. Pile (Stack)
+## ⭐ Remerciements
 
-- Structure **LIFO** (Last In First Out)
-- Fonctions :
-  - `push(val)` : ajoute un élément
-  - `pop()` : supprime le dernier élément
-  - `afficher()` : affiche le contenu
+Si ce projet vous a été utile, n'hésitez pas à lui donner une étoile ⭐ !
 
-📈 Complexité :
-- Push / Pop : `O(1)`
-- Affichage : `O(n)`
+### 🎓 Ressources utiles
+- [Cours d'algorithmique](https://example.com)
+- [Documentation C++](https://cppreference.com)
+- [Visualisation d'algorithmes](https://visualgo.net)
 
 ---
 
-## 📌 4. File (Queue)
-
-- Structure **FIFO** (First In First Out)
-- Fonctions :
-  - `ajouter(val)` : ajoute à la fin
-  - `supprimer()` : enlève au début
-  - `afficher()` : affiche tous les éléments
-
-📈 Complexité :
-- Ajouter / Supprimer : `O(1)`
-- Affichage : `O(n)`
-
----
-
-## 📌 5. Liste Chaînée (Linked List)
-
-- Chaque élément (nœud) contient :
-  - une valeur
-  - un pointeur vers le suivant
-
-Fonctions :
-- `ajouter(val)` : ajoute à la fin
-- `supprimer(val)` : supprime un nœud
-- `afficher()` : affiche tous les nœuds
-
-📈 Complexité :
-- Ajouter : `O(n)`
-- Supprimer : `O(n)`
-- Affichage : `O(n)`
-
----
-
-## 📌 6. Arbre Binaire
-
-- Chaque nœud a :
-  - une valeur
-  - un fils gauche
-  - un fils droit
-
-Fonctions :
-- `ajouter(val)` : insère selon la règle du BST
-- `supprimer(val)` : supprime un nœud
-- `afficher()` : parcours in-order
-
-📈 Complexité :
-- Recherche / Ajout / Suppression : `O(log n)` en moyenne, `O(n)` dans le pire cas
-
----
-
-## ✅ Objectif
-
-Ce projet est destiné aux débutants pour :
-- comprendre les concepts fondamentaux
-- apprendre à manipuler la mémoire et les structures
-- pratiquer le C++ sans bibliothèque STL
-
----
-
-## 📁 Fichiers proposés
-
-| Fichier                  | Description                        |
-|--------------------------|------------------------------------|
-| `tri.cpp`                | Algorithmes de tri                 |
-| `pointeur.cpp`           | Exemples simples de pointeurs      |
-| `pile.cpp`               | Implémentation manuelle de pile    |
-| `file.cpp`               | Implémentation manuelle de file    |
-| `linkedlist.cpp`         | Liste chaînée                      |
-| `arbre_binaire.cpp`      | Arbre binaire                      |
-
----
-
-## 📚 À venir (si besoin)
-
-- Menu interactif en console
-- Interface graphique (SFML ou SDL)
-- Structures dynamiques avec `new` et `delete`
-
----
-
-## 💬 Auteur
-
-Réalisé à des fins éducatives pour mieux comprendre la logique des structures en C++.
+<div align="center">
+  <b>Fait avec ❤️ pour l'apprentissage</b>
+</div>
