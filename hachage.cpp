@@ -52,16 +52,16 @@ void initialiserTableHachage(TableHachage& th) {
     }
 }
 
-// Inserer une paire clé-valeur
-void inserer(TableHachage& th, const char* cle, int valeur) {
+// Insérer une paire clé-valeur
+bool inserer(TableHachage& th, const char* cle, int valeur) {
     int index = fonctionHachage(cle);
-    int original = index;
+    int original_index = index;
 
     while (th.table[index].occupe && !comparerChaines(th.table[index].cle, cle)) {
         index = (index + 1) % TAILLE_TABLE;
-        if (index == original) {
+        if (index == original_index) {
             cout << "Table pleine, insertion impossible pour : " << cle << endl;
-            return;
+            return false; // Table pleine, insertion échouée
         }
     }
 
@@ -69,6 +69,7 @@ void inserer(TableHachage& th, const char* cle, int valeur) {
     th.table[index].valeur = valeur;
     th.table[index].occupe = true;
     cout << "Inséré (" << cle << ", " << valeur << ") à l'index " << index << endl;
+    return true; // Insertion réussie
 }
 
 // Rechercher une valeur par clé, retourne true si trouvée
