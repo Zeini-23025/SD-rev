@@ -32,6 +32,7 @@ Ce projet vise à :
 - **Tri par sélection** - Sélection du minimum/maximum
 - **Tri par insertion** - Insertion dans la partie triée
 - **Tri à bulles** - Comparaison d'éléments adjacents
+- **Tri par fusion** - Diviser pour régner (Merge Sort)
 
 ### 🔷 Structures de données
 - **Pile (Stack)** - Structure LIFO
@@ -109,7 +110,7 @@ int main() {
 
 | Fichier | Description | Fonctionnalités |
 |---------|-------------|-----------------|
-| `tri.cpp` | Algorithmes de tri | Selection, Insertion, Bubble sort |
+| `tri.cpp` | Algorithmes de tri | Selection, Insertion, Bubble, Merge sort |
 | `pointeur.cpp` | Exemples de pointeurs | Syntaxe, manipulation mémoire |
 | `pile.cpp` | Implémentation de pile | Push, Pop, Afficher |
 | `file.cpp` | Implémentation de file | Ajouter, Supprimer, Afficher |
@@ -157,6 +158,7 @@ int main() {
 | Sélection | O(n²) | O(n²) | O(n²) | O(1) |
 | Insertion | O(n) | O(n²) | O(n²) | O(1) |
 | Bulles | O(n) | O(n²) | O(n²) | O(1) |
+| Fusion | O(n log n) | O(n log n) | O(n log n) | O(n) |
 
 ### Structures de données
 | Structure | Insertion | Recherche | Suppression | Espace |
