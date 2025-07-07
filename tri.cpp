@@ -107,9 +107,9 @@ int main() {
     afficher(arr3, n);
 
     int arr4[] = {5, 2, 9, 1, 3};
-    mergeSort(arr4, 0, n - 1);
+    mergeSort(arr4, 0, sizeof(arr4)/sizeof(arr4[0]) - 1);
     cout << "Tri par fusion : ";
-    afficher(arr4, n);
+    afficher(arr4, sizeof(arr4)/sizeof(arr4[0]));
 
     return 0;
 }
